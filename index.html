@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Bookshelf App</h2>
+    </header>
+
+    <main class="container">
+        <div class="input" style="flex-grow: 3;">
+
+            <div class="form">
+                <div class="search">
+                    <h2 class="head-wrap">Live Search </h2>
+                    <input id="searchbox" oninput="search()" type="search"
+                        placeholder="Masukkan Judul Yang Ingin Anda Cari">
+                </div>
+                <form class="form" id="form" action="#">
+                    <h2 class="head-wrap">Masukkan Buku Baru</h2>
+                    <label for="title">Judul Buku</label> <br>
+                    <input type="text" placeholder="Masukkan Judul Buku" id="title" minlength="3" autofocus><br>
+                    <label for="author">Penulis</label> <br>
+                    <input type="text" placeholder="Masukkan Penulis Buku" id="author" autofocus><br>
+                    <label for="year">Tahun Terbit</label>
+                    <input type="number" min="1900" max="2022" value="2015" id="year"> <br>
+                    <label for="isCompleted">Selesai Dibaca ?</label>
+                    <input type="checkbox" name="isCompleted" id="isCompleted" value=false> <br>
+                    <button type="submit" value="Submit" name="submit" class="btn-submit">Simpan</button>
+                </form>
+            </div>
+        </div>
+        <div class="status" style="flex-grow: 6;">
+            <div class="belum-selesai" style="flex-grow: 1;">
+                <h2 class="head-wrap" align="center">Belum Selesai Dibaca</h2>
+                <div class="contents" id="belum-selesai">
+
+                </div>
+            </div>
+            <div class="selesai" style="flex-grow: 1;">
+                <h2 class="head-wrap" align="center">Selesai Dibaca</h2>
+                <div class="contents" id="selesai">
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script>
+        const getCheck = document.getElementById('isCompleted');
+
+        getCheck.addEventListener('click', function () {
+            if (getCheck.value == 'true') {
+                getCheck.setAttribute('value', false);
+            } else {
+                getCheck.setAttribute('value', true);
+            }
+        })
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+:root {
+    --blue: #002B5B;
+    --grey: #2B4865;
+    --green1: #256D85;
+    --green2: #8FE3CF;
+    --green3: #8FE3CF;
+    --white1: #EAE3D2;
+    --white2: #F9F5EB;
+    --violet: #A66CFF;
+}
+
+body {
+    background-color: var(--blue);
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--green1);
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.container {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    justify-content: space-between;
+    color: var(--green2);
+}
+
+.container .input {
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+}
+
+.container .head-wrap {
+    text-align: center;
+}
+
+.container .form {
+    background-color: var(--grey);
+    height: max-content;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.container .search {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    color: white;
+}
+
+.container .input .search input{
+    background-color: var(--white1);
+}
+
+.container .input .search button:hover {
+    background-color: var(--green2);
+}
+
+.container .input label {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.container .input input {
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px 0 10px 5px;
+    background-color: var(--green2);
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: black;
+}
+
+.container .input input[type="text"]
+{
+    width: 100%;
+    border: none;
+    height: 20px;
+}
+.container .input input[type="search"] {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.container .input input[type="checkbox"] {
+    background-color: none;
+}
+
+.container .input button {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: large;
+    background-color: var(--green2);
+    color: var(--blue);
+    font-weight: bolder;
+}
+
+.container .input button:hover {
+    background-color: var(--white1);
+    font-weight: lighter;
+    transform: translateY(-5px);
+    border: 2px solid var(--green2);
+    box-shadow: 6px 13px 10px 0px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 6px 13px 10px 0px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 6px 13px 10px 0px rgba(0, 0, 0, 0.8);
+}
+
+.container .status {
+    background-color: var(--grey);
+    border-radius: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 700px;
+}
+
+.container .status .belum-selesai {
+    background-color: var(--blue);
+    border-radius: 20px;
+    overflow: auto;
+    margin-right: 5px;
+}
+
+.container .status .selesai {
+    background-color: var(--green1);
+    margin-left: 5px;
+    border-radius: 20px;
+    color: var(--white2);
+    overflow: auto;
+}
+
+.card {
+    margin: 15px;
+    border: 2px solid var(--white1);
+    padding: 5px;
+    text-align: center;
+}
+
+.check-button {
+    background: url('./assets/check-outline1.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.check-button:hover {
+    background: url('./assets/check-solid1.svg');
+    background-size: contain;
+}
+
+.trash-button {
+    background: url('./assets/trash-outline1.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button:hover {
+    background: url('./assets/trash-fill2.svg');
+    background-size: contain;
+}
+
+.undo-button {
+    background: url('./assets/undo-ouline1.svg');
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+    transition: transform 2s;
+}
+
+.undo-button:hover {
+    background: url('./assets/undo-ouline1.svg');
+    background-size: contain;
+    transform: rotate(-30deg);
+}
+
+.check-button:focus, .trash-button {
+    outline: none;
+}
+.is-hidden { display: none; }
+@media (max-width: 800px) {
+    .container{
+        flex-direction: column;
+        
+    }
+    .container .status {
+        flex-direction: column;
+        max-height: 400px;
+        display: none;
+    }
+    .container .status .belum-selesai {
+        margin-bottom: 20px;
+    }
+    .search{
+        display: none;
+    }
+    .container .form {
+        margin-bottom: 50px;
+    }
+}

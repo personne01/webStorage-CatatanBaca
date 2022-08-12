@@ -128,6 +128,11 @@ function addBook() {
 
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveData();
+  Swal.fire(
+    'Berhasil!',
+    'Buku berhasil ditambahkan!',
+    'success'
+  )
 }
 
 function addBooksToCompleted(BookId) {
@@ -167,19 +172,30 @@ function moveToUncompleted(BookId) {
 }
 
 function removeBooks(BookId) {
-  
-  if (confirm("Yakin menghapus data tersebut?")) {
-    const bookTarget = findBookIndex(BookId);
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const bookTarget = findBookIndex(BookId);
 
-    if (bookTarget === -1) return;
-  
-    books.splice(bookTarget, 1);
-    document.dispatchEvent(new Event(RENDER_EVENT));
-    saveData();
-  } else {
-      return
-  }
-  
+      if (bookTarget === -1) return;
+    
+      books.splice(bookTarget, 1);
+      document.dispatchEvent(new Event(RENDER_EVENT));
+      saveData();
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
+  })
 }
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookshelf App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -26,11 +27,12 @@
                 <form class="form" id="form" action="#">
                     <h2 class="head-wrap">Masukkan Buku Baru</h2>
                     <label for="title">Judul Buku</label> <br>
-                    <input type="text" placeholder="Masukkan Judul Buku" id="title" minlength="3" autofocus><br>
+                    <input type="text" placeholder="Masukkan Judul Buku" id="title" minlength="3" autofocus
+                        required><br>
                     <label for="author">Penulis</label> <br>
                     <input type="text" placeholder="Masukkan Penulis Buku" id="author" autofocus><br>
                     <label for="year">Tahun Terbit</label>
-                    <input type="number" min="1900" max="2022" value="2015" id="year"> <br>
+                    <input type="number" min="1900" max="2022" value="2015" id="year" required> <br>
                     <label for="isCompleted">Selesai Dibaca ?</label>
                     <input type="checkbox" name="isCompleted" id="isCompleted" value=false> <br>
                     <button type="submit" value="Submit" name="submit" class="btn-submit">Simpan</button>
